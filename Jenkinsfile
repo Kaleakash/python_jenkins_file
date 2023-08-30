@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: 'main']], extensions: [], 
+                checkout([$class: 'GitSCM', branches: [[name: 'master']], extensions: [], 
                 userRemoteConfigs: [[url: 'https://github.com/Kaleakash/python_jenkins_file.git']]])
             }
         }
         stage('Build') {
             steps {
-                git branch: 'main', url: 'https://github.com/Kaleakash/python_jenkins_file.git'
+                git branch: 'master', url: 'https://github.com/Kaleakash/python_jenkins_file.git'
                 sh 'python ops.py'
             }
         }
