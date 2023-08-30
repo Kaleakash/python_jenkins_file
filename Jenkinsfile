@@ -11,12 +11,12 @@ pipeline {
         stage('Build') {
             steps {
                 git branch: 'main', url: 'https://github.com/Kaleakash/python_jenkins_file.git'
-                sh 'python3 ops.py'
+                sh 'python ops.py'
             }
         }
         stage('Test') {
             steps {
-                sh 'python3 -m pytest'
+                sh 'python -m pytest'
             }
         }
     }
