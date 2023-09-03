@@ -11,14 +11,14 @@ pipeline {
         stage('Build') {
             steps {
                 git branch: 'master', url: 'https://github.com/Kaleakash/python_jenkins_file.git'
-                //sh 'python ops.py'
-                bat 'python ops.py'
+                sh 'python ops.py'
+                //bat 'python ops.py'
             }
         }
         stage('Test') {
             steps {
-                //sh 'python -m pytest'
-                bat 'python -m pytest'
+                sh 'python -m pytest'
+                //bat 'python -m pytest'
             }
         }
     }
